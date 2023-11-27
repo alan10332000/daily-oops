@@ -5,6 +5,7 @@ import { formatPostsAsParams, getAllPostsWithSlug } from '@/lib/post'
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const blogPaths = formatPostsAsParams(await getAllPostsWithSlug())
+  console.log('getServerSideProps blogPaths', blogPaths)
 
   const blogPathsResult = blogPaths.map((item) => {
     const { year, month, day, slug } = item.params
@@ -14,6 +15,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       priority: 0.7,
     }
   })
+  console.log('getServerSideProps blogPathsResult', blogPathsResult)
 
   return getServerSideSitemapLegacy(ctx, blogPathsResult)
 }
