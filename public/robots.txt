@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://yukai-blog.alanchou.dev
+
+# Sitemaps
+Sitemap: https://yukai-blog.alanchou.dev/sitemap.xml
+Sitemap: https://yukai-blog.alanchou.dev/server-sitemap.xml
