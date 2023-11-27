@@ -224,7 +224,7 @@ export async function getStaticProps({ params }: PostProps) {
       noteId: id,
       meta,
     },
-    revalidate: 300,
+    revalidate: 30,
   }
 }
 

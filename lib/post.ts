@@ -46,7 +46,7 @@ export const fetchPostData = async (noteId: string) => {
   const fullContent = await fetch(
     `${config.hackmdBaseUrl}/${noteId}/download`,
     {
-      next: { revalidate: 300 },
+      next: { revalidate: 30 },
     }
   ).then((r) => r.text())
 
@@ -69,7 +69,7 @@ export const getAllPostsWithSlug = async () => {
 
   const data = await fetch(
     `${config.hackmdBaseUrl}/api/@${process.env.HACKMD_PROFILE}/overview`,
-    { next: { revalidate: 300 } }
+    { next: { revalidate: 30 } }
   ).then((r) => r.json())
 
   //@ts-ignore // TODO: TS support
