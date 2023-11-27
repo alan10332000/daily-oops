@@ -4,9 +4,7 @@ import { getServerSideSitemapLegacy } from 'next-sitemap'
 import { formatPostsAsParams, getAllPostsWithSlug } from '@/lib/post'
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const blogPaths = formatPostsAsParams(
-    await getAllPostsWithSlug().catch((err) => err.message)
-  )
+  const blogPaths = formatPostsAsParams(await getAllPostsWithSlug())
 
   const blogPathsResult = blogPaths.map((item) => {
     const { year, month, day, slug } = item.params
