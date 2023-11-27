@@ -224,6 +224,7 @@ export async function getStaticProps({ params }: PostProps) {
       noteId: id,
       meta,
     },
+    revalidate: 30,
   }
 }
 
@@ -232,6 +233,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   }
 }
