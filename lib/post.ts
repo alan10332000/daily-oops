@@ -17,10 +17,10 @@ import {
 } from './noteHelper'
 
 // const cachedDir = path.join(process.cwd(), './.next/cache/posts')
-const notesCachedDir = path.join(process.cwd(), './.next/cache/notes')
+// const notesCachedDir = path.join(process.cwd(), './.next/cache/notes')
 
 // fs.ensureDirSync(cachedDir)
-fs.ensureDirSync(notesCachedDir)
+// fs.ensureDirSync(notesCachedDir)
 
 const getHashedKey = (
   year: string,
@@ -36,8 +36,8 @@ export const fetchPostData = async (noteId: string) => {
     return
   }
 
-  const encodedId = encodeURIComponent(noteId)
-  const notePath = path.join(notesCachedDir, `${encodedId}.md`)
+  // const encodedId = encodeURIComponent(noteId)
+  // const notePath = path.join(notesCachedDir, `${encodedId}.md`)
 
   // if (fs.existsSync(notePath)) {
   //   return fs.readFileSync(notePath, 'utf8')
@@ -50,7 +50,7 @@ export const fetchPostData = async (noteId: string) => {
     }
   ).then((r) => r.text())
 
-  fs.writeFileSync(notePath, fullContent, 'utf8')
+  // fs.writeFileSync(notePath, fullContent, 'utf8')
 
   return fullContent
 }
